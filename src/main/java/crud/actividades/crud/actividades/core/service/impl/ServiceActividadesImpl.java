@@ -28,7 +28,7 @@ public class ServiceActividadesImpl implements IServiceActividad {
             Actividad actividad_ = new Actividad();
             actividad_.setIdEmpleado(actividades.getIdEmpleado());
             actividad_.setDescripcion(actividades.getDescripcion());
-            actividad_.setFechaRegistro(new Date());
+            actividad_.setFechaRegistro(actividades.getFechaRegistro());
             actividad_.setEstado(false);
             return  actividadesDAO.create(actividad_);
         }catch (Exception ex){
@@ -42,7 +42,7 @@ public class ServiceActividadesImpl implements IServiceActividad {
             Actividad actividad_ = new Actividad();
             actividad_.setIdActividades(actividades.getIdActividades());
             actividad_.setFechaEjecucion(new Date());
-            actividad_.setEstado(actividades.getEstado());
+            actividad_.setEstado(true);
             return  actividadesDAO.update(actividad_);
         }catch (Exception ex){
             return 0;
